@@ -89,6 +89,7 @@ public class Traductor {
     //Añadir palabrás
     public void añadirTraduccion(String palabraExtranjera, String español) {
         this.traducciones.put(palabraExtranjera, español);
+        //Si hago put a una clave ya existente machaca el valor
     }
 
     //Borrar palabras
@@ -98,8 +99,7 @@ public class Traductor {
     
     //Hacer una correccion
     public void corregirTraduccion(String palabra, String palabraModificar){
-    this.traducciones.remove(palabra);//La borramos
-    this.traducciones.put(palabra, palabraModificar);//La introducimos corregida
+    this.traducciones.replace(palabra,palabraModificar);
     }
     
     //método hacer lista palabras extranjeras

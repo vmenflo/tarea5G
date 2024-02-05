@@ -100,6 +100,7 @@ public class Traductor {
     //Hacer una correccion
     public void corregirTraduccion(String palabra, String palabraModificar){
     this.traducciones.replace(palabra,palabraModificar);
+    //Mira si existe, y lo machaca.
     }
     
     //método hacer lista palabras extranjeras
@@ -110,5 +111,11 @@ public class Traductor {
     public Set<String> mostrarPalabrasEspañolas(){
         //Lo hago con Set para probar
         return new HashSet<>(this.traducciones.values());
+    }
+    
+    public void mostrarOtraForma(){
+        for(Map.Entry<String,String> entrada:this.traducciones.entrySet()){
+            System.out.println(entrada.getKey() +" " + entrada.getValue());
+        }
     }
 }
